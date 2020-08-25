@@ -15,6 +15,18 @@
         <result column="status" jdbcType="INTEGER" property="status" />
     </resultMap>
 
+    <resultMap id="MenuResultMap" type="highnes.top.template.VO.entity.Menu">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="level" jdbcType="INTEGER" property="level" />
+        <result column="sort" jdbcType="INTEGER" property="sort" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="hidden" jdbcType="INTEGER" property="hidden" />
+    </resultMap>
+
     <select id="selectById" resultMap="BaseResultMap">
         select * from t_admin where id=#{id}
     </select>
@@ -24,7 +36,7 @@
     <select id="selectByName" resultMap="BaseResultMap">
         select * from t_admin a where a.username=#{username}
     </select>
-    <select id="selectMenuByAdminId" resultMap="highnes.top.template.mapper.MenuMapper.BaseResultMap">
+    <select id="selectMenuByAdminId" resultMap="MenuResultMap">
       select
         r.*
       from

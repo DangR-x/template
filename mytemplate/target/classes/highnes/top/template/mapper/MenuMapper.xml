@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace : mapper接口的完全限定名 -->
 <mapper namespace="highnes.top.template.mapper.MenuMapper">
-
     <resultMap id="BaseResultMap" type="highnes.top.template.VO.entity.Menu">
         <id column="id" jdbcType="BIGINT" property="id" />
         <result column="parent_id" jdbcType="BIGINT" property="parentId" />

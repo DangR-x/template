@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
+    #type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver      #mysql 8.0以后版本的，与之前的有所不同
-    url: jdbc:mysql://120.0.0.1:3306/template?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/template?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: 123456
   jackson:
@@ -17,10 +17,10 @@ mybatis:
   type-aliases-package: highnes.top.template.VO      #将别名配置进mybatis在写mapper的时候就用别名就可以
 
 jwt:
-  tokenHeader: Authorization #JWT存储的请求头
+  tokenHeader: token #JWT存储的请求头
   secret: mall-admin-secret #JWT加解密使用的密钥
   expiration: 604800 #JWT的超期限时间(60*60*24*7)
-  tokenHead: Bearer  #JWT负载中拿到开头
+  tokenHead:   #JWT负载中拿到开头
 
 secure:
   ignored:
@@ -33,3 +33,4 @@ secure:
       - /admin/register
       - /admin/info.
       - /product/**
+

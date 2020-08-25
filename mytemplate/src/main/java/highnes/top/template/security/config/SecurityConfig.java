@@ -26,7 +26,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  * @date 2020/8/25
  * @description 对SpringSecurity的配置的扩展，支持自定义白名单资源路径和查询用户逻辑
  */
-@Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //required = false标识在注入bean的时候这个bean可以不存在,默认是true注入时必须存在否则报错
