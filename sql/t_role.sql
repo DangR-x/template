@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 80020
+Source Server         : 本机
+Source Server Version : 50729
 Source Host           : localhost:3306
-Source Database       : website-comment
+Source Database       : template
 
 Target Server Type    : MYSQL
-Target Server Version : 80020
+Target Server Version : 50729
 File Encoding         : 65001
 
-Date: 2020-05-23 10:53:24
+Date: 2020-08-25 17:37:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,13 +20,13 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role`;
 CREATE TABLE `t_role` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL COMMENT '名称',
   `description` varchar(500) DEFAULT NULL COMMENT '描述',
-  `admin_count` int DEFAULT NULL COMMENT '后台用户数量',
+  `admin_count` int(11) DEFAULT NULL COMMENT '后台用户数量',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `status` int DEFAULT '1' COMMENT '启用状态：0->禁用；1->启用',
-  `sort` int DEFAULT '0',
+  `status` int(11) DEFAULT '1' COMMENT '启用状态：0->禁用；1->启用',
+  `sort` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='后台用户角色表';
 

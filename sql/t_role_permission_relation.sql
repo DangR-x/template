@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 80020
+Source Server         : 本机
+Source Server Version : 50729
 Source Host           : localhost:3306
-Source Database       : website-comment
+Source Database       : template
 
 Target Server Type    : MYSQL
-Target Server Version : 80020
+Target Server Version : 50729
 File Encoding         : 65001
 
-Date: 2020-05-23 10:53:33
+Date: 2020-08-25 17:37:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,9 +20,9 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role_permission_relation`;
 CREATE TABLE `t_role_permission_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `role_id` bigint DEFAULT NULL,
-  `permission_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(20) DEFAULT NULL,
+  `permission_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='后台用户角色和权限关系表';
 

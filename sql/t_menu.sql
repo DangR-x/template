@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 80020
+Source Server         : 本机
+Source Server Version : 50729
 Source Host           : localhost:3306
-Source Database       : website-comment
+Source Database       : template
 
 Target Server Type    : MYSQL
-Target Server Version : 80020
+Target Server Version : 50729
 File Encoding         : 65001
 
-Date: 2020-05-23 10:53:07
+Date: 2020-08-25 17:37:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,15 +20,15 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_menu`;
 CREATE TABLE `t_menu` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint DEFAULT NULL COMMENT '父级ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `parent_id` bigint(20) DEFAULT NULL COMMENT '父级ID',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `title` varchar(100) DEFAULT NULL COMMENT '菜单名称',
-  `level` int DEFAULT NULL COMMENT '菜单级数',
-  `sort` int DEFAULT NULL COMMENT '菜单排序',
+  `level` int(11) DEFAULT NULL COMMENT '菜单级数',
+  `sort` int(11) DEFAULT NULL COMMENT '菜单排序',
   `name` varchar(100) DEFAULT NULL COMMENT '前端名称',
   `icon` varchar(200) DEFAULT NULL COMMENT '前端图标',
-  `hidden` int DEFAULT NULL COMMENT '前端隐藏',
+  `hidden` int(11) DEFAULT NULL COMMENT '前端隐藏',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 

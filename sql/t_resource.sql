@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 80020
+Source Server         : 本机
+Source Server Version : 50729
 Source Host           : localhost:3306
-Source Database       : website-comment
+Source Database       : template
 
 Target Server Type    : MYSQL
-Target Server Version : 80020
+Target Server Version : 50729
 File Encoding         : 65001
 
-Date: 2020-05-23 10:53:18
+Date: 2020-08-25 17:37:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,14 +20,14 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_resource`;
 CREATE TABLE `t_resource` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `name` varchar(200) DEFAULT NULL COMMENT '资源名称',
   `url` varchar(200) DEFAULT NULL COMMENT '资源URL',
   `description` varchar(500) DEFAULT NULL COMMENT '描述',
-  `category_id` bigint DEFAULT NULL COMMENT '资源分类ID',
+  `category_id` bigint(20) DEFAULT NULL COMMENT '资源分类ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COMMENT='后台资源表';
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='后台资源表';
 
 -- ----------------------------
 -- Records of t_resource

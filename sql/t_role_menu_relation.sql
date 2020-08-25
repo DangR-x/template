@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 80020
+Source Server         : 本机
+Source Server Version : 50729
 Source Host           : localhost:3306
-Source Database       : website-comment
+Source Database       : template
 
 Target Server Type    : MYSQL
-Target Server Version : 80020
+Target Server Version : 50729
 File Encoding         : 65001
 
-Date: 2020-05-23 10:53:29
+Date: 2020-08-25 17:37:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,9 +20,9 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_role_menu_relation`;
 CREATE TABLE `t_role_menu_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `role_id` bigint DEFAULT NULL COMMENT '角色ID',
-  `menu_id` bigint DEFAULT NULL COMMENT '菜单ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
+  `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单ID',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COMMENT='后台角色菜单关系表';
 

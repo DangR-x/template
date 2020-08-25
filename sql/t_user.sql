@@ -1,3 +1,17 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : 本机
+Source Server Version : 50729
+Source Host           : localhost:3306
+Source Database       : template
+
+Target Server Type    : MYSQL
+Target Server Version : 50729
+File Encoding         : 65001
+
+Date: 2020-08-25 17:38:02
+*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -6,11 +20,11 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user`;
 CREATE TABLE `t_user` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `role` bigint DEFAULT NULL,
-  `menu` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `role` bigint(20) DEFAULT NULL,
+  `menu` varchar(255) DEFAULT NULL,
   `file` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
