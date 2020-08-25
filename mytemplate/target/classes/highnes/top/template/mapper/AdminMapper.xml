@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : mapper接口的完全限定名 -->
+<mapper namespace="highnes.top.template.mapper.AdminMapper">
+    <resultMap id="BaseResultMap" type="highnes.top.template.VO.entity.Admin">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+        <result column="note" jdbcType="VARCHAR" property="note" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="login_time" jdbcType="TIMESTAMP" property="loginTime" />
+        <result column="status" jdbcType="INTEGER" property="status" />
+    </resultMap>
+
+    <resultMap id="MenuResultMap" type="highnes.top.template.VO.entity.Menu">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="level" jdbcType="INTEGER" property="level" />
+        <result column="sort" jdbcType="INTEGER" property="sort" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="icon" jdbcType="VARCHAR" property="icon" />
+        <result column="hidden" jdbcType="INTEGER" property="hidden" />
+    </resultMap>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        select * from t_admin where id=#{id}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select * from t_admin
+    </select>
+    <select id="selectByName" resultMap="BaseResultMap">
+        select * from t_admin a where a.username=#{username}
+    </select>
+    <select id="selectMenuByAdminId" resultMap="MenuResultMap">
+      select
+        r.*
+      from
+        t_admin_role_relation arr
+      left join t_role_menu_relation rmr on rmr.role_id=arr.role_id
+      left join t_menu r on r.id=rmr.menu_id
+      where arr.admin_id=#{id}
+    </select>
+
+    <update id="updateByName" parameterType="highnes.top.template.VO.entity.Admin">
+         update t_admin a set
+         a.username=#{username},
+         a.password=#{password},
+         a.icon=#{icon},
+         a.email=#{email},
+         a.nick_name=#{nickName},
+         a.note=#{note},
+         create_time = #{createTime},
+         login_time = #{loginTime},
+         a.status=#{status}
+         where a.id=#{id}
+    </update>
+    <update id="updateById" parameterType="highnes.top.template.VO.entity.Admin" >
+        update t_admin a set
+         a.username=#{username},
+         a.password=#{password},
+         a.icon=#{icon},
+         a.email=#{email},
+         a.nick_name=#{nickName},
+         a.note=#{note},
+         create_time = #{createTime},
+         login_time = #{loginTime},
+         a.status=#{status}
+         where a.id=#{id}
+    </update>
+    <delete id="deleteById" parameterType="long">
+        delete from t_admin where id=#{id}
+    </delete>
+
+    <insert id="insert" parameterType="highnes.top.template.VO.entity.Admin" >
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_admin (
+        username,
+        password,
+        icon,
+        email,
+        nick_name, note,
+        create_time,
+        login_time,
+        status) value
+        (
+        #{username},
+        #{password},
+        #{icon},
+        #{email},
+        #{nickName},
+        #{note},
+        #{createTime},
+        #{loginTime},
+        #{status})
+    </insert>
+
+</mapper>
