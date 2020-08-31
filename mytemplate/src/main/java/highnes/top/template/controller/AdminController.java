@@ -43,7 +43,7 @@ public class AdminController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
     public CommonResult login(@RequestBody LoginAdminParam admin, BindingResult result){
-        String token = adminService.login(admin.getName(), admin.getPassword());
+        String token = adminService.login(admin.getUsername(), admin.getPassword());
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
         tokenMap.put("tokenHead", tokenHead);

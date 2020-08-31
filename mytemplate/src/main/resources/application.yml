@@ -11,6 +11,22 @@ spring:
   jackson:
     date-format: yyyy-MM-dd
     time-zone: GMT+8
+  thymeleaf:
+    mode: HTML5         #设置html页面版本
+    encoding: utf-8
+    #servlet:
+    #content-type: text/html
+    cache: false        #开发时关闭缓存,不然没法看到实时页面
+    enabled: true  #开启thymeleaf视图解析
+    # 指定模板所在的目录
+    prefix: classpath:/templates/
+    #后缀名
+    suffix: .html
+
+#  mvc:
+#    view:
+#      prefix: templates/        #访问项目中的静态资源
+#      suffix: .html
 
 mybatis:
   mapper-locations: classpath:highens/top/template/mapper/*.xml        #mapper文件的位置
@@ -29,8 +45,12 @@ secure:
       - /**/*.css
       - /**/*.png
       - /**/*.ico
-      - /admin/login
+      - /**/*.jpg
       - /admin/register
+      - /admin/login
       - /admin/info.
       - /product/**
+      - /login
+      - /static/**
+      - /index/**
 

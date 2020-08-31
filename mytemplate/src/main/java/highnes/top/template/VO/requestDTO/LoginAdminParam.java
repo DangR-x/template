@@ -9,24 +9,24 @@ import javax.validation.constraints.NotEmpty;
  */
 public class LoginAdminParam {
     @NotEmpty(message = "用户名不能为空")
-    private String name;
+    private String username;
     @NotEmpty(message = "用户名不能为空")
     private String password;
 
-    public LoginAdminParam(@NotEmpty(message = "用户名不能为空") String name, @NotEmpty(message = "用户名不能为空") String password) {
-        this.name = name;
+    public LoginAdminParam(@NotEmpty(message = "用户名不能为空") String username, @NotEmpty(message = "用户名不能为空") String password) {
+        this.username = username;
         this.password = password;
     }
 
     public LoginAdminParam() {
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -40,7 +40,7 @@ public class LoginAdminParam {
     @Override
     public String toString() {
         return "LoginAdminParam{" +
-                "name='" + name + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
