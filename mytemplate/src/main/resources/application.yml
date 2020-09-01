@@ -53,4 +53,5 @@ secure:
       - /login
       - /static/**
       - /index/**
+      - /test/**
 

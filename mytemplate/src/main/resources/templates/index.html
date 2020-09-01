@@ -1,19 +1,91 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="../layui/css/layui.css">
         <script src="../layui/layui.js"></script>
+        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+        <!--[if lt IE 9]>
+        <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+        <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
     </head>
-    <body >
-    <script >
-        function f() {
-            var encrypt = new JSEncrypt();
-            var publicKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJZjVUohcZK1c4y1KRvaepX0DhXoyqVM+/wOD1J3GbxNmA5gknEUCOlQ7C3Rq7qrkkNOuyVmeCD26bUiE0mVEsTJJtO83sHN6rpc6lnHnDpdFn7v+jRSLhi9xjAgcHkOBLlcmctre8upY6Tg0C1jSWoLbTXvSYeLkWaN1qTrc5PPAgMBAAECgYAJuQBRm5npHzwKM8glmdllCnNCrVs0lqaP5CTPcw3B485Z15qAHwh4dRff2ndcySzalyN4RoirsOrpH/vZPP8KinIhOT9zcHInWMKEPqGH+twB+c0hS6x2YZFuJqW3+zy56jnUMn3MDjNF5A5N9hD6taP1V+UOqgZvYwwMSCFLkQJBANZtQS2AqahHNjPgjkWcuaG8zXzgbu0VeU+wXDjxR81aLLJBOK6AGe7w5yJnip2w/FqGxPfORcn/bLxyDHOhpQcCQQCzi5zeeiXt1cxeGGqVxNvC51PuSna9YnPs+phiwwGVdAqVdMOJzsThs5EDVhX4eQYIeA4B6PItiPLHsw+6AXD5AkAp/ac/4+xVeeyRaC40T6bCl5ieFc1jPEtPYbgNpqJrAneySLdy5L8vXZnF0QUCMICasb2s0YY1MoH2vVbW5hbNAkEAsCxD5oFQikiI2aN3ojGhuWMnFeB3Fmlueo+ByxaxjSZp5DDIVYZP5W8+0Vk9Aawu4Ux74h/i0g9Yud7XhZo4cQJARyq8WJGDawo65CVcQQ2opbL8LqApr7Co4CAKmV4YFDraY00q9h1Dbj7WO+urJz7XUqbEYG0Yga+37jQAnQHUUQ==";
-            encrypt.setPublicKey(publicKey);
-            var param = encrypt.decrypt(123);
-            console.log(param)
-        }
+    <body class="layui-layout-body">
+        <div class="layui-layout layui-layout-admin">
+            <div class="layui-header">
+                <div class="layui-logo">西南医院停车码管理平台</div>
+                <!-- 头部区域（可配合layui已有的水平导航） -->
+                <ul class="layui-nav layui-layout-left">
+                    <li class="layui-nav-item"><a href="">控制台</a></li>
+                    <li class="layui-nav-item"><a href="">商品管理</a></li>
+                    <li class="layui-nav-item"><a href="">用户</a></li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">其它系统</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">邮件管理</a></dd>
+                            <dd><a href="">消息管理</a></dd>
+                            <dd><a href="">授权管理</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+                <ul class="layui-nav layui-layout-right">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">
+                            <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
 
-    </script>
-        <H3>HTML</H3>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="admin/info">基本资料</a></dd>
+                            <dd><a href="">安全设置</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="admin/remove">退出</a></li>
+                </ul>
+            </div>
+
+            <div class="layui-side layui-bg-black">
+                <div class="layui-side-scroll">
+                    <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                    <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                        <li class="layui-nav-item layui-nav-itemed">
+                            <a class="" href="javascript:;">所有商品</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="javascript:;">列表一</a></dd>
+                                <dd><a href="javascript:;">列表二</a></dd>
+                                <dd><a href="javascript:;">列表三</a></dd>
+                                <dd><a href="">超链接</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item">
+                            <a href="javascript:;">解决方案</a>
+                            <dl class="layui-nav-child">
+                                <dd><a href="javascript:;">列表一</a></dd>
+                                <dd><a href="javascript:;">列表二</a></dd>
+                                <dd><a href="">超链接</a></dd>
+                            </dl>
+                        </li>
+                        <li class="layui-nav-item"><a href="">云市场</a></li>
+                        <li class="layui-nav-item"><a href="">发布商品</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="layui-body">
+                <!-- 内容主体区域 -->
+                <div style="padding: 15px;">内容主体区域</div>
+            </div>
+
+            <div class="layui-footer">
+                <!-- 底部固定区域 -->
+                © layui.com - 底部固定区域
+            </div>
+        </div>
+        <script src="../layui/layui.js"></script>
+        <script>
+            //JavaScript代码区域
+            layui.use('element', function(){
+                var element = layui.element;
+
+            });
+        </script>
     </body>
 </html>

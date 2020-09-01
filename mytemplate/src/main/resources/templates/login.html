@@ -225,11 +225,11 @@
                                 return false;
                             } else {
                                 // 错误信息
-                                layer.msg(res.msg, {icon: 2, anim: 6});
-                                // 刷新验证码
-                                $('img.login-captcha').click(function () {
-                                    this.src = '/captcha?t=' + (new Date).getTime();
-                                }).trigger('click');
+                                layer.alert(res.message, {icon: 2, anim: 6});
+                                // // 刷新验证码
+                                // $('img.login-captcha').click(function () {
+                                //     this.src = '/captcha?t=' + (new Date).getTime();
+                                // }).trigger('click');
 
                                 // 延迟3秒恢复可登录状态
                                 setTimeout(function () {
@@ -247,11 +247,11 @@
                     return false;
                 });
 
-                /* 图形验证码 */
-                var captchaUrl = '/captcha';
-                $('img.login-captcha').click(function () {
-                    this.src = captchaUrl + '?t=' + (new Date).getTime();
-                }).trigger('click');
+                // /* 图形验证码 */
+                // var captchaUrl = '/captcha';
+                // $('img.login-captcha').click(function () {
+                //     this.src = captchaUrl + '?t=' + (new Date).getTime();
+                // }).trigger('click');
 
             });
         </script>
